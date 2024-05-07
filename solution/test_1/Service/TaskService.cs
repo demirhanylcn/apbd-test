@@ -1,5 +1,4 @@
 using test_1.DTOs;
-using test_1.Exceptions;
 using test_1.Repository;
 
 namespace test_1.Service;

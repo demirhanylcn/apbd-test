@@ -20,7 +20,7 @@ public class TaskRepository : ITaskRepository
         using var command = new SqlCommand();
         
         connection.Open();
-        command.CommandText = "SELECT * FROM Task WHERE IdTask = @IdTask";
+        command.CommandText = "SELECT * FROM [Task] WHERE IdTask = @IdTask";
         command.Parameters.AddWithValue("@IdTask", idTask);
         command.Connection = connection;
         
@@ -46,7 +46,7 @@ public class TaskRepository : ITaskRepository
         using var command = new SqlCommand();
         
         connection.Open();
-        command.CommandText = "SELECT * FROM Task WHERE IdAssignedTo = @IdTeamMember";
+        command.CommandText = "SELECT * FROM [Task] WHERE IdAssignedTo = @IdTeamMember";
         command.Parameters.AddWithValue("@IdTeamMember", idTeamMember);
         command.Connection = connection;
         

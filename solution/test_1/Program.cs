@@ -8,11 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-builder.Services.AddScoped<ITaskService,TaskService>();
+
 builder.Services.AddScoped<ITaskRepository,TaskRepository>();
 builder.Services.AddScoped<ITaskTypeRepository,TaskTypeRepository>();
 builder.Services.AddScoped<IProjectRepository,ProjectRepository>();
 builder.Services.AddScoped<ITeamMemberRepository,TeamMemberRepository>();
+builder.Services.AddScoped<ITaskService,TaskService>();
 
 var app = builder.Build();
 
