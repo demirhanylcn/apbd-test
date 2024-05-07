@@ -1,3 +1,6 @@
+using test_1.Repository;
+using test_1.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,7 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-builder.Services.AddScoped<>();
+builder.Services.AddScoped<ITaskService,TaskService>();
+builder.Services.AddScoped<ITaskRepository,TaskRepository>();
+builder.Services.AddScoped<ITaskTypeRepository,TaskTypeRepository>();
+builder.Services.AddScoped<IProjectRepository,ProjectRepository>();
+builder.Services.AddScoped<ITeamMemberRepository,TeamMemberRepository>();
 
 var app = builder.Build();
 
